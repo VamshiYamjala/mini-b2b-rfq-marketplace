@@ -19,7 +19,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 11 | Buyer UI | COMPLETE | Dashboard, Create, Edit, Detail & Quotes UI | 7d76fd1 | My RFQs, post, edit (locked if closed), close |
 | 12 | Supplier UI | COMPLETE | Browse, search, filter, quote form, my quotes | 0b46ac4 | Supplier marketplace, quote gating, history |
 | 13 | Validation & Error Handling Pass | COMPLETE | 16/16 edge cases automated pass | 21aa107 | 400/401/403/404/409/422/500 envelope coverage |
-| 14 | Security Review | COMPLETE | SQL injection, cookie flags & secret audit | [PENDING_COMMIT] | Parameterized queries, HttpOnly, no leaks |
+| 14 | Security Review | COMPLETE | SQL injection, cookie flags & secret audit | b8ab950 | Parameterized queries, HttpOnly, no leaks |
 | 15 | Testing | PENDING | - | - | Jest & Supertest automated test suite |
 | 16 | UI/UX & Responsiveness | PENDING | - | - | Mobile responsiveness, states & polish |
 | 17 | Production Configuration | PENDING | - | - | Production envs, cookies, logging |
