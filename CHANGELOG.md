@@ -6,6 +6,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Supplier UI workflow: Browse RFQs with keyword search, location filter & pagination, RFQ Details with quotation submission, and My Quotations history (Level 12)
+- QuotationForm with real-time price & delivery validation
+- "Already Quoted" state display preventing repeat quotations from UI
+- Closed and expired RFQ visual banners disabling quotation submission
 - Buyer UI workflow: Dashboard with metrics, Create RFQ, Edit RFQ, and RFQ Details with Quotation List (Level 11)
 - Read-only disabled edit view for closed RFQs preserving quotation audit integrity
 - Interactive RFQ close confirmation with instantaneous UI status synchronization

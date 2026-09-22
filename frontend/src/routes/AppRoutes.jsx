@@ -14,6 +14,11 @@ import CreateRfq from '../pages/CreateRfq';
 import EditRfq from '../pages/EditRfq';
 import RfqDetailBuyer from '../pages/RfqDetailBuyer';
 
+// Supplier Pages
+import SupplierDashboard from '../pages/SupplierDashboard';
+import RfqDetailSupplier from '../pages/RfqDetailSupplier';
+import MyQuotations from '../pages/MyQuotations';
+
 const HomeRedirect = () => {
   const { user, isAuthenticated, loading } = useAuth();
 
@@ -69,12 +74,28 @@ const AppRoutes = () => {
         }
       />
 
-      {/* Supplier Routes placeholder - Level 12 */}
+      {/* Supplier Protected Routes - Level 12 */}
       <Route
-        path="/supplier/*"
+        path="/supplier"
         element={
           <RoleRoute allowedRoles={['SUPPLIER']}>
-            <div className="container py-5"><h3>Supplier Dashboard Shell</h3></div>
+            <SupplierDashboard />
+          </RoleRoute>
+        }
+      />
+      <Route
+        path="/supplier/rfq/:id"
+        element={
+          <RoleRoute allowedRoles={['SUPPLIER']}>
+            <RfqDetailSupplier />
+          </RoleRoute>
+        }
+      />
+      <Route
+        path="/supplier/my-quotations"
+        element={
+          <RoleRoute allowedRoles={['SUPPLIER']}>
+            <MyQuotations />
           </RoleRoute>
         }
       />
