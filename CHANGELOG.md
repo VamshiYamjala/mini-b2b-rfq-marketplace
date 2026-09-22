@@ -6,6 +6,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- React / Vite SPA frontend foundation with Bootstrap 5 and React Router (Level 9)
+- Axios API client configured with withCredentials: true and base URL from VITE_API_BASE_URL
+- AuthContext providing session restoration (/api/auth/me on mount), login, register, and logout
+- Role-aware responsive Navbar, ProtectedRoute, and RoleRoute authorization guards
+- Shared UI components: Spinner, EmptyState, ErrorState, StatusBadge
 - Complete Quotation system: POST /api/rfqs/:rfqId/quotations, GET /api/quotations/my, GET /api/rfqs/:rfqId/quotations (Level 8)
 - Enforced single quotation per supplier per RFQ with pre-check and database unique constraint backstop
 - Business rules: quotations rejected on closed or expired RFQs (409 Conflict)
