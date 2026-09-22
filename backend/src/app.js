@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const config = require('./config/env');
+const sessionMiddleware = require('./config/session');
 const errorHandler = require('./middleware/errorHandler');
 const healthRoutes = require('./routes/health.routes');
+const authRoutes = require('./routes/auth.routes');
 
 const app = express();
 
@@ -21,6 +23,9 @@ app.use(cors({
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+// Session middleware with persistent MySQL backing
+app.use(sessionMiddleware);
+
 // Request logger for development
 if (config.nodeEnv !== 'test') {
   app.use((req, res, next) => {
@@ -35,6 +40,9 @@ if (config.nodeEnv !== 'test') {
 
 // Health and monitoring routes
 app.use('/api', healthRoutes);
+
+// Authentication routes
+app.use('/api/auth', authRoutes);
 
 // Catch 404 for unhandled API routes
 app.use('/api/*', (req, res, next) => {
