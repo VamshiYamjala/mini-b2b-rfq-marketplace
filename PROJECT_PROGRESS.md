@@ -7,7 +7,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 |---|---|---|---|---|---|
 | 0 | Project Initialization | COMPLETE | Startup checks pass | beb5172 | Repo setup, skeletons, dependencies |
 | 1 | Database Foundation | COMPLETE | Schema verification script | 2c54af5 | 3NF tables, constraints, indexes & seeds |
-| 2 | Backend Foundation | COMPLETE | Supertest health check & error test | [PENDING_COMMIT] | Express app, DB pool, apiResponse, errorHandler |
+| 2 | Backend Foundation | COMPLETE | Supertest health check & error test | 2b7fe0d | Express app, DB pool, apiResponse, errorHandler |
 | 3 | Authentication | PENDING | - | - | Sessions, bcrypt, register, login, logout |
 | 4 | Role Authorization | PENDING | - | - | requireAuth, requireRole guards |
 | 5 | Buyer RFQ Creation | PENDING | - | - | POST /api/rfqs with validation |
