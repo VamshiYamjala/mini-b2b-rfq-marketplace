@@ -9,7 +9,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 1 | Database Foundation | COMPLETE | Schema verification script | 2c54af5 | 3NF tables, constraints, indexes & seeds |
 | 2 | Backend Foundation | COMPLETE | Supertest health check & error test | 2b7fe0d | Express app, DB pool, apiResponse, errorHandler |
 | 3 | Authentication | COMPLETE | Automated supertest 9/9 auth tests | 91ddcae | Persistent MySQL session, register, login, logout, me |
-| 4 | Role Authorization | COMPLETE | Automated role probe tests (401/403/200) | [PENDING_COMMIT] | requireRole guard enforcing BUYER/SUPPLIER isolation |
+| 4 | Role Authorization | COMPLETE | Automated role probe tests (401/403/200) | 24e3649 | requireRole guard enforcing BUYER/SUPPLIER isolation |
 | 5 | Buyer RFQ Creation | PENDING | - | - | POST /api/rfqs with validation |
 | 6 | Buyer RFQ Management | PENDING | - | - | List own, edit, close RFQ |
 | 7 | Supplier RFQ Discovery | PENDING | - | - | Browse open RFQs, filters, pagination |
