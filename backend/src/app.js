@@ -44,6 +44,9 @@ app.use('/api', healthRoutes);
 // Authentication routes
 app.use('/api/auth', authRoutes);
 
+// RFQ routes
+app.use('/api/rfqs', require('./routes/rfq.routes'));
+
 // Catch 404 for unhandled API routes
 app.use('/api/*', (req, res, next) => {
   const { NotFoundError } = require('./utils/errors');

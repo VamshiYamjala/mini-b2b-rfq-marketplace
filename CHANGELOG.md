@@ -6,6 +6,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Buyer RFQ creation endpoint POST /api/rfqs with strict BUYER role authorization (Level 5)
+- Server-side validation for RFQs (product name, description, quantity > 0, delivery location, future deadline)
+- RfqModel with parameterized SQL queries and relational join for buyer metadata
 - Role-based authorization middleware (requireRole) enforcing strict role access (Level 4)
 - Automated authorization matrix tests verifying 403 Forbidden on role mismatch and 401 on unauthenticated access
 - Session-based authentication with express-session and MySQL persistent store (Level 3)
