@@ -6,6 +6,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Complete automated backend test suite with Jest and Supertest (Level 15)
+- 25 automated integration tests across auth.test.js, rfq.test.js, quotation.test.js, and authorization.test.js
 - Security Review & Audit: parameterized query verification against SQL injection, HttpOnly cookie inspection, and git secret leak audit (Level 14)
 - Validation & Error Handling Pass: automated verification across 16 edge cases (400, 401, 403, 404, 409, 422, 500) (Level 13)
 - Verification of multi-field validation error collection, unknown field rejection, and information leakage prevention
