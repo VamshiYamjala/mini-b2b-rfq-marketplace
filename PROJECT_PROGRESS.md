@@ -11,7 +11,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 3 | Authentication | COMPLETE | Automated supertest 9/9 auth tests | 91ddcae | Persistent MySQL session, register, login, logout, me |
 | 4 | Role Authorization | COMPLETE | Automated role probe tests (401/403/200) | 24e3649 | requireRole guard enforcing BUYER/SUPPLIER isolation |
 | 5 | Buyer RFQ Creation | COMPLETE | Supertest validation, past deadline, role tests | 71b34cb | POST /api/rfqs with strict validation & BUYER role |
-| 6 | Buyer RFQ Management | COMPLETE | Supertest 11/11 ownership, edit, close tests | [PENDING_COMMIT] | GET /my, GET /:id, PUT /:id, PATCH /close |
+| 6 | Buyer RFQ Management | COMPLETE | Supertest 11/11 ownership, edit, close tests | 0806adb | GET /my, GET /:id, PUT /:id, PATCH /close |
 | 7 | Supplier RFQ Discovery | PENDING | - | - | Browse open RFQs, filters, pagination |
 | 8 | Quotation System | PENDING | - | - | Submit quote, unique constraint, view quotes |
 | 9 | Frontend Foundation | PENDING | - | - | Vite, Bootstrap, Axios, AuthContext |
