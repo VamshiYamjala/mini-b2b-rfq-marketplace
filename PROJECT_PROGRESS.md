@@ -21,7 +21,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 13 | Validation & Error Handling Pass | COMPLETE | 16/16 edge cases automated pass | 21aa107 | 400/401/403/404/409/422/500 envelope coverage |
 | 14 | Security Review | COMPLETE | SQL injection, cookie flags & secret audit | b8ab950 | Parameterized queries, HttpOnly, no leaks |
 | 15 | Testing | COMPLETE | 25/25 Jest tests passing (3.2s) | 54d8cae | Jest + Supertest: auth, rfq, quotation, authz |
-| 16 | UI/UX & Responsiveness | PENDING | - | - | Mobile responsiveness, states & polish |
+| 16 | UI/UX & Responsiveness | COMPLETE | Mobile breakpoints & visual consistency | [PENDING_COMMIT] | Responsive grid, transitions, accessible focus |
 | 17 | Production Configuration | PENDING | - | - | Production envs, cookies, logging |
 | 18 | Deployment | PENDING | - | - | Render backend, Vercel frontend, cloud DB |
 | 19 | End-to-End Verification | PENDING | - | - | 15 live evaluator scenarios |
