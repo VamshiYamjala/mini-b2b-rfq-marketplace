@@ -5,7 +5,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 
 | Level | Description | Status | Tests | Commit Hash | Notes |
 |---|---|---|---|---|---|
-| 0 | Project Initialization | COMPLETE | Startup checks pass | [PENDING_COMMIT] | Repo setup, skeletons, dependencies |
+| 0 | Project Initialization | COMPLETE | Startup checks pass | beb5172 | Repo setup, skeletons, dependencies |
 | 1 | Database Foundation | PENDING | - | - | MySQL tables, constraints & seed |
 | 2 | Backend Foundation | PENDING | - | - | Express app, DB pool, error handler |
 | 3 | Authentication | PENDING | - | - | Sessions, bcrypt, register, login, logout |
