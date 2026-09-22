@@ -47,6 +47,9 @@ app.use('/api/auth', authRoutes);
 // RFQ routes
 app.use('/api/rfqs', require('./routes/rfq.routes'));
 
+// Quotation routes
+app.use('/api/quotations', require('./routes/quotation.routes'));
+
 // Catch 404 for unhandled API routes
 app.use('/api/*', (req, res, next) => {
   const { NotFoundError } = require('./utils/errors');

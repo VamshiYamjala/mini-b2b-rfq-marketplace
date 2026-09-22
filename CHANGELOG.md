@@ -6,6 +6,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Complete Quotation system: POST /api/rfqs/:rfqId/quotations, GET /api/quotations/my, GET /api/rfqs/:rfqId/quotations (Level 8)
+- Enforced single quotation per supplier per RFQ with pre-check and database unique constraint backstop
+- Business rules: quotations rejected on closed or expired RFQs (409 Conflict)
+- Strict authorization: only suppliers submit quotations, only RFQ owner views all bids, suppliers only view their own bids
 - Supplier RFQ discovery endpoint GET /api/rfqs with keyword search, location filtering, and pagination (Level 7)
 - Dynamic is_expired computation ensuring passed deadlines are flagged in real-time
 - Role-gated supplier access (403 for buyers attempting to access supplier discovery)

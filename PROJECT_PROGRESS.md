@@ -13,7 +13,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 5 | Buyer RFQ Creation | COMPLETE | Supertest validation, past deadline, role tests | 71b34cb | POST /api/rfqs with strict validation & BUYER role |
 | 6 | Buyer RFQ Management | COMPLETE | Supertest 11/11 ownership, edit, close tests | 0806adb | GET /my, GET /:id, PUT /:id, PATCH /close |
 | 7 | Supplier RFQ Discovery | COMPLETE | Supertest 8/8 search, filter, pagination tests | 4a85119 | GET /api/rfqs with search, location, pagination |
-| 8 | Quotation System | PENDING | - | - | Submit quote, unique constraint, view quotes |
+| 8 | Quotation System | COMPLETE | Supertest 12/12 quotation, duplicate & permission tests | [PENDING_COMMIT] | Submit quotation, duplicate check, view bids |
 | 9 | Frontend Foundation | PENDING | - | - | Vite, Bootstrap, Axios, AuthContext |
 | 10 | Authentication UI | PENDING | - | - | Login & Register pages, protected routes |
 | 11 | Buyer UI | PENDING | - | - | Buyer dashboard, RFQ forms, quote viewer |
