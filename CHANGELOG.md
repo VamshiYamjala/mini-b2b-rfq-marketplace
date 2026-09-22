@@ -6,6 +6,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Buyer UI workflow: Dashboard with metrics, Create RFQ, Edit RFQ, and RFQ Details with Quotation List (Level 11)
+- Read-only disabled edit view for closed RFQs preserving quotation audit integrity
+- Interactive RFQ close confirmation with instantaneous UI status synchronization
+- rfqService and quotationService frontend API abstraction layers
 - Authentication UI: Login and Register pages with client-side validation and role selection (Level 10)
 - Quick-fill demo account buttons on login page for evaluator convenience
 - authService API helper module

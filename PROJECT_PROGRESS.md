@@ -16,7 +16,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 8 | Quotation System | COMPLETE | Supertest 12/12 quotation, duplicate & permission tests | ba15b5c | Submit quotation, duplicate check, view bids |
 | 9 | Frontend Foundation | COMPLETE | Vite production build check & wiring | 3baab2a | React, Bootstrap 5, Axios, AuthContext, Navbar |
 | 10 | Authentication UI | COMPLETE | Form validation, demo fill, build checks | 322e6f0 | Login & Register pages, role redirection |
-| 11 | Buyer UI | PENDING | - | - | Buyer dashboard, RFQ forms, quote viewer |
+| 11 | Buyer UI | COMPLETE | Dashboard, Create, Edit, Detail & Quotes UI | [PENDING_COMMIT] | My RFQs, post, edit (locked if closed), close |
 | 12 | Supplier UI | PENDING | - | - | Supplier browse, quote submission, history |
 | 13 | Validation & Error Handling Pass | PENDING | - | - | Edge cases, 400/401/403/404/409/422/500 |
 | 14 | Security Review | PENDING | - | - | Secret scan, injection, cookies, CORS |

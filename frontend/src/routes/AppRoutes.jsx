@@ -1,13 +1,18 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import ProtectedRoute from './ProtectedRoute';
 import RoleRoute from './RoleRoute';
 import Spinner from '../components/Spinner';
 
-// Pages
+// Auth Pages
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+
+// Buyer Pages
+import BuyerDashboard from '../pages/BuyerDashboard';
+import CreateRfq from '../pages/CreateRfq';
+import EditRfq from '../pages/EditRfq';
+import RfqDetailBuyer from '../pages/RfqDetailBuyer';
 
 const HomeRedirect = () => {
   const { user, isAuthenticated, loading } = useAuth();
@@ -30,17 +35,41 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Buyer Routes placeholder */}
+      {/* Buyer Protected Routes - Level 11 */}
       <Route
-        path="/buyer/*"
+        path="/buyer"
         element={
           <RoleRoute allowedRoles={['BUYER']}>
-            <div className="container py-5"><h3>Buyer Dashboard Shell</h3></div>
+            <BuyerDashboard />
+          </RoleRoute>
+        }
+      />
+      <Route
+        path="/buyer/create"
+        element={
+          <RoleRoute allowedRoles={['BUYER']}>
+            <CreateRfq />
+          </RoleRoute>
+        }
+      />
+      <Route
+        path="/buyer/rfq/:id"
+        element={
+          <RoleRoute allowedRoles={['BUYER']}>
+            <RfqDetailBuyer />
+          </RoleRoute>
+        }
+      />
+      <Route
+        path="/buyer/rfq/:id/edit"
+        element={
+          <RoleRoute allowedRoles={['BUYER']}>
+            <EditRfq />
           </RoleRoute>
         }
       />
 
-      {/* Supplier Routes placeholder */}
+      {/* Supplier Routes placeholder - Level 12 */}
       <Route
         path="/supplier/*"
         element={
