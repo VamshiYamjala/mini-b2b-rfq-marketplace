@@ -6,6 +6,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Authentication UI: Login and Register pages with client-side validation and role selection (Level 10)
+- Quick-fill demo account buttons on login page for evaluator convenience
+- authService API helper module
 - React / Vite SPA frontend foundation with Bootstrap 5 and React Router (Level 9)
 - Axios API client configured with withCredentials: true and base URL from VITE_API_BASE_URL
 - AuthContext providing session restoration (/api/auth/me on mount), login, register, and logout

@@ -5,7 +5,10 @@ import ProtectedRoute from './ProtectedRoute';
 import RoleRoute from './RoleRoute';
 import Spinner from '../components/Spinner';
 
-// Placeholder or imported pages (will be fully implemented in Levels 10-12)
+// Pages
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+
 const HomeRedirect = () => {
   const { user, isAuthenticated, loading } = useAuth();
 
@@ -24,10 +27,10 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomeRedirect />} />
-      <Route path="/login" element={<div className="container py-5 text-center"><h4>Login Page Placeholder</h4></div>} />
-      <Route path="/register" element={<div className="container py-5 text-center"><h4>Register Page Placeholder</h4></div>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
 
-      {/* Buyer Routes */}
+      {/* Buyer Routes placeholder */}
       <Route
         path="/buyer/*"
         element={
@@ -37,7 +40,7 @@ const AppRoutes = () => {
         }
       />
 
-      {/* Supplier Routes */}
+      {/* Supplier Routes placeholder */}
       <Route
         path="/supplier/*"
         element={
