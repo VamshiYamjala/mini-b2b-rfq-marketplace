@@ -8,7 +8,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 0 | Project Initialization | COMPLETE | Startup checks pass | beb5172 | Repo setup, skeletons, dependencies |
 | 1 | Database Foundation | COMPLETE | Schema verification script | 2c54af5 | 3NF tables, constraints, indexes & seeds |
 | 2 | Backend Foundation | COMPLETE | Supertest health check & error test | 2b7fe0d | Express app, DB pool, apiResponse, errorHandler |
-| 3 | Authentication | COMPLETE | Automated supertest 9/9 auth tests | [PENDING_COMMIT] | Persistent MySQL session, register, login, logout, me |
+| 3 | Authentication | COMPLETE | Automated supertest 9/9 auth tests | 91ddcae | Persistent MySQL session, register, login, logout, me |
 | 4 | Role Authorization | PENDING | - | - | requireAuth, requireRole guards |
 | 5 | Buyer RFQ Creation | PENDING | - | - | POST /api/rfqs with validation |
 | 6 | Buyer RFQ Management | PENDING | - | - | List own, edit, close RFQ |
