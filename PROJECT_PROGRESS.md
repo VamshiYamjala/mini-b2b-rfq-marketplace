@@ -12,7 +12,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 4 | Role Authorization | COMPLETE | Automated role probe tests (401/403/200) | 24e3649 | requireRole guard enforcing BUYER/SUPPLIER isolation |
 | 5 | Buyer RFQ Creation | COMPLETE | Supertest validation, past deadline, role tests | 71b34cb | POST /api/rfqs with strict validation & BUYER role |
 | 6 | Buyer RFQ Management | COMPLETE | Supertest 11/11 ownership, edit, close tests | 0806adb | GET /my, GET /:id, PUT /:id, PATCH /close |
-| 7 | Supplier RFQ Discovery | COMPLETE | Supertest 8/8 search, filter, pagination tests | [PENDING_COMMIT] | GET /api/rfqs with search, location, pagination |
+| 7 | Supplier RFQ Discovery | COMPLETE | Supertest 8/8 search, filter, pagination tests | 4a85119 | GET /api/rfqs with search, location, pagination |
 | 8 | Quotation System | PENDING | - | - | Submit quote, unique constraint, view quotes |
 | 9 | Frontend Foundation | PENDING | - | - | Vite, Bootstrap, Axios, AuthContext |
 | 10 | Authentication UI | PENDING | - | - | Login & Register pages, protected routes |
