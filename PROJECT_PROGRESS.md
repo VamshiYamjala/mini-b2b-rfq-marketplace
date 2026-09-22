@@ -1,4 +1,4 @@
-﻿# Project Progress: Mini B2B RFQ Marketplace
+# Project Progress: Mini B2B RFQ Marketplace
 
 Status tracking for the 23-level implementation plan per the Engineering Specification.
 Levels are marked COMPLETE only when the verification gate passes and commit is recorded.
@@ -6,7 +6,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | Level | Description | Status | Tests | Commit Hash | Notes |
 |---|---|---|---|---|---|
 | 0 | Project Initialization | COMPLETE | Startup checks pass | beb5172 | Repo setup, skeletons, dependencies |
-| 1 | Database Foundation | PENDING | - | - | MySQL tables, constraints & seed |
+| 1 | Database Foundation | COMPLETE | Schema verification script | [PENDING_COMMIT] | 3NF tables, constraints, indexes & seeds |
 | 2 | Backend Foundation | PENDING | - | - | Express app, DB pool, error handler |
 | 3 | Authentication | PENDING | - | - | Sessions, bcrypt, register, login, logout |
 | 4 | Role Authorization | PENDING | - | - | requireAuth, requireRole guards |
