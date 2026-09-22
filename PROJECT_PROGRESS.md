@@ -18,7 +18,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 10 | Authentication UI | COMPLETE | Form validation, demo fill, build checks | 322e6f0 | Login & Register pages, role redirection |
 | 11 | Buyer UI | COMPLETE | Dashboard, Create, Edit, Detail & Quotes UI | 7d76fd1 | My RFQs, post, edit (locked if closed), close |
 | 12 | Supplier UI | COMPLETE | Browse, search, filter, quote form, my quotes | 0b46ac4 | Supplier marketplace, quote gating, history |
-| 13 | Validation & Error Handling Pass | PENDING | - | - | Edge cases, 400/401/403/404/409/422/500 |
+| 13 | Validation & Error Handling Pass | COMPLETE | 16/16 edge cases automated pass | [PENDING_COMMIT] | 400/401/403/404/409/422/500 envelope coverage |
 | 14 | Security Review | PENDING | - | - | Secret scan, injection, cookies, CORS |
 | 15 | Testing | PENDING | - | - | Jest & Supertest automated test suite |
 | 16 | UI/UX & Responsiveness | PENDING | - | - | Mobile responsiveness, states & polish |

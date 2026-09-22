@@ -6,6 +6,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Validation & Error Handling Pass: automated verification across 16 edge cases (400, 401, 403, 404, 409, 422, 500) (Level 13)
+- Verification of multi-field validation error collection, unknown field rejection, and information leakage prevention
 - Supplier UI workflow: Browse RFQs with keyword search, location filter & pagination, RFQ Details with quotation submission, and My Quotations history (Level 12)
 - QuotationForm with real-time price & delivery validation
 - "Already Quoted" state display preventing repeat quotations from UI
