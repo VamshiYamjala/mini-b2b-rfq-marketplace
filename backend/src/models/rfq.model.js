@@ -70,6 +70,80 @@ const RfqModel = {
     return rows;
   },
 
+  async findPublicRfqs({ search, location, status = 'OPEN', page = 1, limit = 10 }) {
+    let whereConditions = [];
+    let params = [];
+
+    // Filter by status (default OPEN)
+    const validStatus = status ? status.toUpperCase() : 'OPEN';
+    if (['OPEN', 'CLOSED'].includes(validStatus)) {
+      whereConditions.push('r.status = ?');
+      params.push(validStatus);
+    }
+
+    // Filter by keyword search across product name and description
+    if (search && search.trim().length > 0) {
+      whereConditions.push('(r.product_service_name LIKE ? OR r.requirement_description LIKE ?)');
+      const pattern = `%${search.trim()}%`;
+      params.push(pattern, pattern);
+    }
+
+    // Filter by location
+    if (location && location.trim().length > 0) {
+      whereConditions.push('r.delivery_location LIKE ?');
+      params.push(`%${location.trim()}%`);
+    }
+
+    const whereClause = whereConditions.length > 0 ? `WHERE ${whereConditions.join(' AND ')}` : '';
+
+    // Count total matching records
+    const countSql = `SELECT COUNT(*) AS total FROM rfqs r ${whereClause}`;
+    const [countRows] = await pool.query(countSql, params);
+    const total = countRows[0].total;
+
+    // Apply pagination
+    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 10, 1), 50);
+    const safePage = Math.max(parseInt(page, 10) || 1, 1);
+    const offset = (safePage - 1) * safeLimit;
+
+    const dataSql = `
+      SELECT 
+        r.id, 
+        r.buyer_id, 
+        r.product_service_name, 
+        r.requirement_description, 
+        r.quantity, 
+        r.delivery_location, 
+        r.deadline, 
+        r.status, 
+        r.created_at, 
+        r.updated_at,
+        u.name as buyer_name,
+        COUNT(q.id) AS quotation_count
+      FROM rfqs r
+      JOIN users u ON r.buyer_id = u.id
+      LEFT JOIN quotations q ON r.id = q.rfq_id
+      ${whereClause}
+      GROUP BY r.id
+      ORDER BY r.created_at DESC
+      LIMIT ? OFFSET ?
+    `;
+
+    const dataParams = [...params, safeLimit, offset];
+    const [items] = await pool.query(dataSql, dataParams);
+
+    return {
+      items: items.map(rfq => ({
+        ...rfq,
+        is_expired: new Date(rfq.deadline) <= new Date()
+      })),
+      total,
+      page: safePage,
+      limit: safeLimit,
+      totalPages: Math.ceil(total / safeLimit)
+    };
+  },
+
   async update(id, buyerId, { productServiceName, requirementDescription, quantity, deliveryLocation, deadline }) {
     const [result] = await pool.query(
       `UPDATE rfqs SET 

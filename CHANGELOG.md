@@ -6,6 +6,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Supplier RFQ discovery endpoint GET /api/rfqs with keyword search, location filtering, and pagination (Level 7)
+- Dynamic is_expired computation ensuring passed deadlines are flagged in real-time
+- Role-gated supplier access (403 for buyers attempting to access supplier discovery)
 - Buyer RFQ management endpoints: GET /api/rfqs/my, GET /api/rfqs/:id, PUT /api/rfqs/:id, PATCH /api/rfqs/:id/close (Level 6)
 - Service-layer and database-layer ownership validation ensuring buyers can only view, edit, and close their own RFQs
 - Enforced business rules: closed RFQs are read-only (409 on edit), double-close prevention (409 on close)

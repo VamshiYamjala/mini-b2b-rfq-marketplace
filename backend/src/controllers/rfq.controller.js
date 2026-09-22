@@ -12,6 +12,11 @@ const getMyRfqs = asyncHandler(async (req, res) => {
   return ok(res, rfqs, 'My RFQs retrieved successfully', 200);
 });
 
+const getPublicRfqs = asyncHandler(async (req, res) => {
+  const result = await RfqService.getPublicRfqs(req.query);
+  return ok(res, result, 'RFQs retrieved successfully', 200);
+});
+
 const getRfqById = asyncHandler(async (req, res) => {
   const rfq = await RfqService.getRfqById(req.params.id, req.user);
   return ok(res, rfq, 'RFQ details retrieved successfully', 200);
@@ -30,6 +35,7 @@ const closeRfq = asyncHandler(async (req, res) => {
 module.exports = {
   createRfq,
   getMyRfqs,
+  getPublicRfqs,
   getRfqById,
   updateRfq,
   closeRfq

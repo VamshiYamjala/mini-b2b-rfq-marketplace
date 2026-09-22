@@ -19,6 +19,10 @@ const RfqService = {
     return RfqModel.findMyRfqs(buyerId, status);
   },
 
+  async getPublicRfqs(filters) {
+    return RfqModel.findPublicRfqs(filters);
+  },
+
   async getRfqById(id, user) {
     const rfq = await RfqModel.findById(id);
     if (!rfq) {

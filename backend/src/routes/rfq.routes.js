@@ -8,6 +8,9 @@ const { validateRfq } = require('../validators/rfq.validator');
 // Buyer RFQ Creation - Level 5
 router.post('/', requireAuth, requireRole('BUYER'), validateRfq, rfqController.createRfq);
 
+// Supplier RFQ Discovery - Level 7
+router.get('/', requireAuth, requireRole('SUPPLIER'), rfqController.getPublicRfqs);
+
 // Buyer RFQ Management - Level 6
 // Note: /my MUST be registered before /:id to avoid route collision
 router.get('/my', requireAuth, requireRole('BUYER'), rfqController.getMyRfqs);
