@@ -6,6 +6,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Role-based authorization middleware (requireRole) enforcing strict role access (Level 4)
+- Automated authorization matrix tests verifying 403 Forbidden on role mismatch and 401 on unauthenticated access
 - Session-based authentication with express-session and MySQL persistent store (Level 3)
 - Bcrypt password hashing (cost factor 10) and session fixation protection via session.regenerate()
 - Endpoints: POST /api/auth/register, POST /api/auth/login, POST /api/auth/logout, GET /api/auth/me
