@@ -3,7 +3,6 @@ const MySQLStore = require('express-mysql-session')(session);
 const pool = require('./db');
 const config = require('./env');
 
-// MySQL session store configuration using existing connection pool
 const sessionStore = new MySQLStore({
   clearExpired: true,
   checkExpirationInterval: 15 * 60 * 1000, // 15 minutes
@@ -25,10 +24,11 @@ const sessionMiddleware = session({
   store: sessionStore,
   resave: false,
   saveUninitialized: false,
+  proxy: config.isProduction, // trust the reverse proxy for cookie handling
   cookie: {
     httpOnly: true,
-    secure: config.nodeEnv === 'production',
-    sameSite: config.nodeEnv === 'production' ? 'none' : 'lax',
+    secure: config.isProduction,
+    sameSite: config.isProduction ? 'none' : 'lax',
     maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
   }
 });

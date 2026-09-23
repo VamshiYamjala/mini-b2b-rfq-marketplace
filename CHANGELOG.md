@@ -6,6 +6,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Production Configuration: environment-variable driven configuration, cross-domain cookie flags (SameSite=None, Secure), and reverse proxy trust (Level 17)
+- Dynamic multi-origin CORS verification supporting Vercel and Render domains
+- Finalized backend/.env.example and frontend/.env.example templates
 - UI/UX & Mobile Responsiveness polish: card hover transitions, table responsive wrapping, and accessible focus states (Level 16)
 - Complete automated backend test suite with Jest and Supertest (Level 15)
 - 25 automated integration tests across auth.test.js, rfq.test.js, quotation.test.js, and authorization.test.js

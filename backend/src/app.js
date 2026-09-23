@@ -8,12 +8,21 @@ const authRoutes = require('./routes/auth.routes');
 
 const app = express();
 
-// Trust reverse proxy (for Render / Vercel deployment HTTPS cookie forwarding)
+// Trust reverse proxy (for Render / Vercel HTTPS reverse proxy cookie forwarding)
 app.set('trust proxy', 1);
 
-// CORS configuration matching specification Section 15
+// Dynamic CORS origin verification matching specification Section 15
 app.use(cors({
-  origin: config.corsOrigin,
+  origin: (origin, callback) => {
+    // Allow non-browser requests (e.g. health probes, curl, tests)
+    if (!origin) return callback(null, true);
+    if (config.corsOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    // In production, reject unauthorized origins cleanly
+    const msg = `Origin ${origin} not permitted by CORS policy`;
+    return callback(new Error(msg));
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
