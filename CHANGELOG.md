@@ -6,6 +6,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Deployment infrastructure: render.yaml blueprint, frontend/vercel.json configuration, and complete DEPLOYMENT.md guide (Level 18)
 - Production Configuration: environment-variable driven configuration, cross-domain cookie flags (SameSite=None, Secure), and reverse proxy trust (Level 17)
 - Dynamic multi-origin CORS verification supporting Vercel and Render domains
 - Finalized backend/.env.example and frontend/.env.example templates
