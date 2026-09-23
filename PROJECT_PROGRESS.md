@@ -23,7 +23,7 @@ Levels are marked COMPLETE only when the verification gate passes and commit is 
 | 15 | Testing | COMPLETE | 25/25 Jest tests passing (3.2s) | 54d8cae | Jest + Supertest: auth, rfq, quotation, authz |
 | 16 | UI/UX & Responsiveness | COMPLETE | Mobile breakpoints & visual consistency | f951ee2 | Responsive grid, transitions, accessible focus |
 | 17 | Production Configuration | COMPLETE | Production mode health check & CORS verification | 6b1fcec | Cross-domain cookies, proxy trust, env templates |
-| 18 | Deployment | COMPLETE | IaC blueprints & deployment configs ready | [PENDING_COMMIT] | render.yaml, vercel.json, DEPLOYMENT.md |
+| 18 | Deployment | COMPLETE | IaC blueprints & deployment configs ready | 8618f75 | render.yaml, vercel.json, DEPLOYMENT.md |
 | 19 | End-to-End Verification | PENDING | - | - | 15 live evaluator scenarios |
 | 20 | Documentation | PENDING | - | - | Final README, ARCHITECTURE, interview guide |
 | 21 | Final Rubric Audit | PENDING | - | - | 100-point rubric verification |
